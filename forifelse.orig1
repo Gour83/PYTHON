@@ -1,0 +1,29 @@
+#!/usr/bin/env python3.6
+
+users = [
+    { 'admin': 'True', 'active': 'True', 'name': 'Kevin' },
+    { 'admin': 'True', 'active': 'False', 'name': 'Elisabeth' },
+    { 'admin': 'False', 'active': 'True', 'name': 'Josh' },
+    { 'admin': 'True', 'active': 'True', 'name': 'mada' },
+    { 'admin': 'False', 'active': 'False', 'name': 'randy' },
+    { 'admin': 'True', 'active': 'False', 'name': 'jeevan' },
+    { 'admin': 'False', 'active': 'True', 'name': 'sam' },
+    { 'admin': 'False', 'active': 'True', 'name': 'kitt' },
+]
+
+line = 1
+
+for user in users:
+    prefix = f"{line} "
+
+    if user['admin']=='True' and user['active']=='True':            
+        prefix += "(ADMIN)-Active "
+    elif user['admin']=='False'and user['active']=='True':
+       prefix += "(USER)-Active "
+    elif user['admin']=='True'and user['active']=='False':
+       prefix += "(Admin)-InActive "
+    elif user['admin']=='False'and user['active']=='False':
+        prefix += " (User)-InActive "
+
+    print(prefix + user['name'])
+    line += 1
